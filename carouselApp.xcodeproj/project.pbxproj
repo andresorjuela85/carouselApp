@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F59C20227934CEF00235632 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8F59C20127934CEF00235632 /* AlamofireImage */; };
+		8F59C2042793777900235632 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59C2032793777900235632 /* SecondViewController.swift */; };
 		8F73413D278FA55D003E4B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F73413C278FA55D003E4B57 /* AppDelegate.swift */; };
 		8F73413F278FA55D003E4B57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F73413E278FA55D003E4B57 /* SceneDelegate.swift */; };
 		8F734141278FA55D003E4B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F734140278FA55D003E4B57 /* ViewController.swift */; };
@@ -21,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F59C2032793777900235632 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8F734139278FA55D003E4B57 /* carouselApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carouselApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F73413C278FA55D003E4B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F73413E278FA55D003E4B57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F73415A278FC70C003E4B57 /* Alamofire in Frameworks */,
+				8F59C20227934CEF00235632 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +75,7 @@
 				8F73413C278FA55D003E4B57 /* AppDelegate.swift */,
 				8F73413E278FA55D003E4B57 /* SceneDelegate.swift */,
 				8F734140278FA55D003E4B57 /* ViewController.swift */,
+				8F59C2032793777900235632 /* SecondViewController.swift */,
 				8F734142278FA55D003E4B57 /* Main.storyboard */,
 				8F734145278FA562003E4B57 /* Assets.xcassets */,
 				8F734147278FA562003E4B57 /* LaunchScreen.storyboard */,
@@ -115,6 +120,7 @@
 			name = carouselApp;
 			packageProductDependencies = (
 				8F734159278FC70C003E4B57 /* Alamofire */,
+				8F59C20127934CEF00235632 /* AlamofireImage */,
 			);
 			productName = carouselApp;
 			productReference = 8F734139278FA55D003E4B57 /* carouselApp.app */;
@@ -146,6 +152,7 @@
 			mainGroup = 8F734130278FA55D003E4B57;
 			packageReferences = (
 				8F734158278FC70C003E4B57 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F59C20027934CEF00235632 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 8F73413A278FA55D003E4B57 /* Products */;
 			projectDirPath = "";
@@ -179,6 +186,7 @@
 				8F73415C278FC726003E4B57 /* getCartoons.swift in Sources */,
 				8F73413D278FA55D003E4B57 /* AppDelegate.swift in Sources */,
 				8F734152278FA8C7003E4B57 /* Cartoons.swift in Sources */,
+				8F59C2042793777900235632 /* SecondViewController.swift in Sources */,
 				8F734156278FB39E003E4B57 /* listCell.swift in Sources */,
 				8F73413F278FA55D003E4B57 /* SceneDelegate.swift in Sources */,
 			);
@@ -380,6 +388,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F59C20027934CEF00235632 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		8F734158278FC70C003E4B57 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -391,6 +407,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F59C20127934CEF00235632 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F59C20027934CEF00235632 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		8F734159278FC70C003E4B57 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8F734158278FC70C003E4B57 /* XCRemoteSwiftPackageReference "Alamofire" */;

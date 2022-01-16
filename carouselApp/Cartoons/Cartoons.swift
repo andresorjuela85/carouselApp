@@ -8,11 +8,6 @@
 
 import Foundation
 
-/*
-struct webCartoons: Decodable {
-    let movies: [Cartoon]
-}
-*/
 struct Cartoon: Decodable {
     let title: String
     let year: Int?
@@ -25,17 +20,7 @@ struct Cartoon: Decodable {
     let id: Int?
     
 }
-/*
-struct Cartoon: Decodable {
-    let title: String
-    let episode_id: Int
-    let opening_crawl: String?
-    let director: String?
-    let producer: String?
-    let release_date: String?
-    var leido: Bool?
-}
- */
+
 /*
 
  */

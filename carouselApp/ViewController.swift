@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var cartoonSlider: UICollectionView!
     
     let widthCell = UIScreen.main.bounds.width
+    let heightCell = UIScreen.main.bounds.height - 110
     var selectedCartoon: [Cartoon] = []
-    var tabla = ["a", "b","c","d","e","f","g","h"]
+    var oneCartoon: Cartoon?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+  
         let service = GetCartoons()
         
         service.getList { cartoonsReceived in
@@ -29,21 +29,25 @@ class ViewController: UIViewController {
                 self.cartoonSlider.dataSource = self
                 self.cartoonSlider.delegate = self
                 
-            } else {
-                print("No entra")
             }
         }
         
-     
         self.cartoonSlider.register(UINib(nibName: "listCell", bundle: nil), forCellWithReuseIdentifier: "reuse")
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let secondView = segue.destination as? SecondViewController
+        {
+            secondView.showCartoon = oneCartoon
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return selectedCartoon.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,7 +56,7 @@ extension ViewController: UICollectionViewDataSource
             return UICollectionViewCell()
         }
         
-        cell.configure(cartoon: selectedCartoon[2])
+        cell.configure(cartoon: selectedCartoon[indexPath.row])
         return cell
         
     }
@@ -66,16 +70,18 @@ extension ViewController: UICollectionViewDataSource
 extension ViewController: UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print (indexPath.row)
+ 
+        oneCartoon = selectedCartoon[indexPath.row]
+        performSegue(withIdentifier: "secondViewSegue", sender: self)
+        
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: widthCell, height: widthCell)
+        return CGSize(width: widthCell, height: heightCell)
     }
 }
 /*
-
  */

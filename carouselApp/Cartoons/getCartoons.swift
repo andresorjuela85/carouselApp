@@ -12,7 +12,7 @@ import Alamofire
 class GetCartoons {
 
      func getList(completion: @escaping ([Cartoon]?) -> Void) {
-        AF.request("https://61d4cc528df81200178a8e47.mockapi.io/movies").responseDecodable(of: [Cartoon].self) { response in
+        AF.request("https://api.sampleapis.com/cartoons/cartoons2D").responseDecodable(of: [Cartoon].self) { response in
             
             guard let cartoonsReceived = response.value else {
                 print("No recibe")
@@ -24,6 +24,7 @@ class GetCartoons {
             
         }
     }
+    
 }
 
 /*
